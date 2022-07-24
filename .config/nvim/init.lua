@@ -25,5 +25,6 @@ require("plugin-config.todo-comments")
 require("plugin-config.autopairs")
 require("plugin-config.indent-blankline")
 require("plugin-config.autocommand")
+require("plugin-config.hop")
 -- 内置LSP
 require("lsp")

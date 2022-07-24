@@ -61,6 +61,11 @@ map("", "L", "$", opt)
 -- map("n", "<C-u>", "9k", opt)
 -- map("n", "<C-d>", "9j", opt)
 
+-- easymove
+map("n", "<leader>hl", ":HopLine<CR>", opt)
+map("n", "<leader>hw", ":HopWord<CR>", opt)
+map("n", "<leader>ha", ":HopAnywhere<CR>", opt)
+
 -- NOTE: FileExpoler
 -- no highlight
 map("n", "<leader>l", ":nohl<cr>", opt)

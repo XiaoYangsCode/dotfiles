@@ -26,8 +26,17 @@ packer.startup(function(use)
   use("terrortylor/nvim-comment")
   use("folke/todo-comments.nvim")
   -- surround and repeat
-  use ("tpope/vim-repeat") --  . command enhance
-  use ("tpope/vim-surround") -- vim surround
+  use("tpope/vim-repeat") --  . command enhance
+  use("tpope/vim-surround") -- vim surround
+  -- like easy move
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    -- config = function()
+    --   -- you can configure Hop the way you like here; see :h hop-config
+    --   require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    -- end
+  }
 
   -- NOTE: dashboard-nvim
   use("glepnir/dashboard-nvim")

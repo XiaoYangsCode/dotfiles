@@ -125,14 +125,22 @@
 
 ## Surround
 
-| function | short key     |
-| -------- | ------------- |
-| cs       | change        |
-| ys       | add           |
-| yss      | add for line  |
-| ds       | delete        |
-|          |               |
-| <q>      | <q> </q>      |
-| t        | tag as above  |
-| ]        | have no space |
-| [        | have space    |
+| function     | short key     |
+| ------------ | ------------- |
+| change       | `cs`          |
+| add          | `ys`          |
+| add for line | `yss`         |
+| delete       | `ds`          |
+|              |               |
+| <q>          | <q> </q>      |
+| t            | tag as above  |
+| ]            | have no space |
+| [            | have space    |
+
+## Hop
+
+| function      | short key  |
+| ------------- | ---------- |
+| move line     | <leader>hl |
+| move word     | <leader>hw |
+| move anywhere | <leader>ha |
