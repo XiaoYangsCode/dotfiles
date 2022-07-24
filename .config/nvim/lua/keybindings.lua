@@ -125,8 +125,6 @@ map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opt)
 -- map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", opt)
 -- map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", opt)
 
--- NOTE: outline
-map("n", "<leader>v", ":SymbolsOutline<CR>", opt)
 
 -- NOTE: mimimap
 map("n", "<A-m>", ":MinimapToggle<CR>", opt)
@@ -226,6 +224,18 @@ pluginKeys.telescopeList = {
     ["<C-u>"] = "preview_scrolling_up",
     ["<C-d>"] = "preview_scrolling_down",
   },
+}
+
+-- NOTE: outline
+map("n", "<leader>v", ":SymbolsOutline<CR>", opt)
+pluginKeys.outlineKeymap = {
+  close = {"<Esc>", "q"},
+  goto_location = "<Cr>",
+  focus_location = "o",
+  hover_symbol = "gh",
+  toggle_preview = "gp",
+  rename_symbol = "r",
+  code_actions = "a",
 }
 
 return pluginKeys

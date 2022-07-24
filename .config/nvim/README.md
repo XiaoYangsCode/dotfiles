@@ -6,6 +6,7 @@
 - npm
 - rg
 - fd
+- lazygit
 
 # Installation
 
@@ -152,3 +153,12 @@
 | float terminal  | `ctrl + \`  |
 | insert terminal | `<leader>t` |
 | lazygit         | `<leader>g` |
+
+## Outline
+
+| function       | short key |
+| -------------- | --------- |
+| focus location | `o`       |
+| toggle preview | `gp`      |
+| rename symbol  | `r`       |
+| code action    | `a`       |
