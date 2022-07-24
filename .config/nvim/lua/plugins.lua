@@ -5,7 +5,6 @@ packer.startup(function(use)
   --NOTE: ui
   -- onedark
   use("ful1e5/onedark.nvim")
-  use("onsails/lspkind-nvim")
   -- need install   yay -S code-minimap    command Minimap
   use("wfxr/minimap.vim")
 
@@ -18,6 +17,7 @@ packer.startup(function(use)
   use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
   -- lualine
   use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+  -- show progress for lualine
   use("arkav/lualine-lsp-progress")
   use("windwp/nvim-autopairs")
   -- outline
@@ -37,16 +37,18 @@ packer.startup(function(use)
   use("LinArcX/telescope-env.nvim")
   -- use("nvim-telescope/telescope-ui-select.nvim")
 
-  -- NOTE: treesitter for code highlight
+  -- NOTE: treesitter for code highlight    code folding    block choose
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- NOTE: lsp
   use({ "williamboman/nvim-lsp-installer" })
   use({ "neovim/nvim-lspconfig" })
   -- show function signature when typing
-  use("ray-x/lsp_signature.nvim")
+  -- use("ray-x/lsp_signature.nvim")
+  -- icons for lsp diagnostic
+  use("onsails/lspkind-nvim")
   -- format
   -- use("mhartington/formatter.nvim")
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+  -- use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 
   -- NOTE: cmp
   use("hrsh7th/nvim-cmp")
