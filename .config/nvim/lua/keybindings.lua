@@ -85,6 +85,8 @@ map("n", "Q", ":qa!<CR>", opt)
 
 
 -- NOTE: terminal
+map("n", "<C-\\>", ":ToggleTerm<CR>", opt)
+map("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opt)
 map("n", "<leader>t", ":sp | terminal<CR>", opt)
 map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)

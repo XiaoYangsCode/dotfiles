@@ -139,8 +139,16 @@
 
 ## Hop
 
-| function      | short key  |
-| ------------- | ---------- |
-| move line     | <leader>hl |
-| move word     | <leader>hw |
-| move anywhere | <leader>ha |
+| function      | short key    |
+| ------------- | ------------ |
+| move line     | `<leader>hl` |
+| move word     | `<leader>hw` |
+| move anywhere | `<leader>ha` |
+
+## Terminal
+
+| function        | short key   |
+| --------------- | ----------- |
+| float terminal  | `ctrl + \`  |
+| insert terminal | `<leader>t` |
+| lazygit         | `<leader>g` |

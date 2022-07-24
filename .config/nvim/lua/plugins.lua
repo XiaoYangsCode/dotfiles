@@ -80,6 +80,9 @@ packer.startup(function(use)
   -- NOTE: git
   use("lewis6991/gitsigns.nvim")
 
+  -- NOTE: float term
+  use("akinsho/toggleterm.nvim")
+
   -- NOTE: markdown
   -- use {
   --   "skanehira/preview-markdown.vim",
