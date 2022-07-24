@@ -25,6 +25,9 @@ packer.startup(function(use)
   -- comment
   use("terrortylor/nvim-comment")
   use("folke/todo-comments.nvim")
+  -- surround and repeat
+  use ("tpope/vim-repeat") --  . command enhance
+  use ("tpope/vim-surround") -- vim surround
 
   -- NOTE: dashboard-nvim
   use("glepnir/dashboard-nvim")

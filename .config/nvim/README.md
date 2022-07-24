@@ -122,3 +122,17 @@
 | 4 lines              | `gc4j`    |
 | delete comment block | `dic`     |
 | uncomment block      | `gcic`    |
+
+## Surround
+
+| function | short key     |
+| -------- | ------------- |
+| cs       | change        |
+| ys       | add           |
+| yss      | add for line  |
+| ds       | delete        |
+|          |               |
+| <q>      | <q> </q>      |
+| t        | tag as above  |
+| ]        | have no space |
+| [        | have space    |
