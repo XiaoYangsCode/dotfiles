@@ -6,6 +6,6 @@ end
 require("lsp.handlers").setup()
 require("lsp.lsp-installer")
 require("lsp.ui")
--- require("lsp.lsp-signature")
--- require("lsp.null-ls")
+require("lsp.lsp-signature")
+require("lsp.null-ls")
 require("lsp.cmp")

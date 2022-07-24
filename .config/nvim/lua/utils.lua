@@ -143,6 +143,7 @@ M.path = (function()
         return
       end
     end
+
     return it, path, path
   end
 
@@ -177,7 +178,7 @@ M.path = (function()
   }
 end)()
 
-M.search_ancestors = function (startpath, func)
+M.search_ancestors = function(startpath, func)
   validate { func = { func, 'f' } }
   if func(startpath) then
     return startpath
@@ -207,9 +208,19 @@ M.root_pattern = function(...)
       end
     end
   end
+
   return function(startpath)
     return M.search_ancestors(startpath, matcher)
   end
+end
+
+M.find_git_ancestor = function(startpath)
+  return M.search_ancestors(startpath, function(path)
+    -- Support git directories and git files (worktrees)
+    if M.path.is_dir(M.path.join(path, '.git')) or M.path.is_file(M.path.join(path, '.git')) then
+      return path
+    end
+  end)
 end
 
 return M

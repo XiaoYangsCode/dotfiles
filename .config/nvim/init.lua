@@ -27,5 +27,6 @@ require("plugin-config.indent-blankline")
 require("plugin-config.autocommand")
 require("plugin-config.hop")
 require("plugin-config.toggleterm")
+require("plugin-config.nvim-lightbulb")
 -- 内置LSP
 require("lsp")

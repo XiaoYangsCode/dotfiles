@@ -20,16 +20,16 @@ telescope.setup({
   },
   extensions = {
      -- 扩展插件配置
-    -- ["ui-select"] = {
-    --   require("telescope.themes").get_dropdown {
-    --     -- even more opts
-    --   }
-    -- },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
+    },
   },
 })
 
 -- telescope extensions
 pcall(telescope.load_extension, "env")
--- telescope.load_extension("ui-select")
+telescope.load_extension("ui-select")
 
 

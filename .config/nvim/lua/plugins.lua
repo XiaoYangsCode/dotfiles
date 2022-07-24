@@ -43,11 +43,11 @@ packer.startup(function(use)
   -- project for dashboard
   use("ahmedkhalf/project.nvim")
 
-  -- NOTE: telescope search enhance
+  -- NOTE: telescope search enhance and ui for select
   use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- telescope extensions
   use("LinArcX/telescope-env.nvim")
-  -- use("nvim-telescope/telescope-ui-select.nvim")
+  use("nvim-telescope/telescope-ui-select.nvim")
 
   -- NOTE: treesitter for code highlight    code folding    block choose
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -55,7 +55,9 @@ packer.startup(function(use)
   use({ "williamboman/nvim-lsp-installer" })
   use({ "neovim/nvim-lspconfig" })
   -- show function signature when typing
-  -- use("ray-x/lsp_signature.nvim")
+  use("ray-x/lsp_signature.nvim")
+  -- code action
+  use("kosayoda/nvim-lightbulb")
   -- icons for lsp diagnostic
   use("onsails/lspkind-nvim")
   -- format
@@ -84,6 +86,10 @@ packer.startup(function(use)
   use("akinsho/toggleterm.nvim")
 
   -- NOTE: markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- use {
   --   "skanehira/preview-markdown.vim",
   --   opt = true,

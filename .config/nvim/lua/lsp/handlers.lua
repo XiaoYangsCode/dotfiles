@@ -66,7 +66,7 @@ M.on_attach = function(client, bufnr)
   -- client.resolved_capabilities.document_formatting = false
   -- end
   mapLSP(bufnr)
-  -- lsp_highlight_document(client)  -- use RRethy/vim-illuminate instead
+  lsp_highlight_document(client)  -- use RRethy/vim-illuminate instead
 
   -- add outline support for evey lanuage
   -- require("aerial").on_attach(client, bufnr)

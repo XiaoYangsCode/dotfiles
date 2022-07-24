@@ -11,8 +11,25 @@
 # Installation
 
 - `:PackerSync`
+- `:TSInstallInfo`
 - `:LspInstallInfo`
 - `:checkhealth`
+
+## How to add new language
+
+- code highlight    nvim-treesitter.lua
+- install language server
+- add language config   lsp-installer.lua
+- snippets  cmp.lua
+
+# TODO
+
+- format for python
+- autocmmond for format and refresh minimap
+- telescope
+- debug for python
+- qt config
+- markdown config
 
 # Short Key
 
