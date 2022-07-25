@@ -209,6 +209,7 @@ map("n", "<C-f>", ":Telescope live_grep_args<CR>", opt)
 -- search symbols
 map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>S", ":Telescope lsp_workspace_symbols<CR>", opt)
+map("n", "<leader>p", ":Telescope projects<CR>", opt)
 -- insert mode short key for telescope
 pluginKeys.telescopeList = {
   i = {

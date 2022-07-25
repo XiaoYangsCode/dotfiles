@@ -26,7 +26,7 @@
 
 # TODO
 
-- workspace
+- close other
 - debug for python
 - qt config
 - markdown config
