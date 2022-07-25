@@ -205,7 +205,10 @@ pluginKeys.nvimTreeList = {
 -- 查找文件
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
-map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<C-f>", ":Telescope live_grep_args<CR>", opt)
+-- search symbols
+map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
+map("n", "<leader>S", ":Telescope lsp_workspace_symbols<CR>", opt)
 -- insert mode short key for telescope
 pluginKeys.telescopeList = {
   i = {

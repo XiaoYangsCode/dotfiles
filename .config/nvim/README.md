@@ -26,7 +26,7 @@
 
 # TODO
 
-- telescope
+- workspace
 - debug for python
 - qt config
 - markdown config
@@ -115,20 +115,22 @@
 
 ## Telescope
 
-| function             | short key  |
-| -------------------- | ---------- |
-| find files           | `ctrl + p` |
-| find content gloabal | `ctrl + f` |
-|                      |            |
-| close                | `ctrl + c` |
-| next(insert)         | `ctrl + j` |
-| previous(insert)     | `ctrl + k` |
-|                      |            |
-| history(insert)      | `ctrl + n` |
-| history(insert)      | `ctrl + p` |
-|                      |            |
-| preview wnd(insert)  | `ctrl + u` |
-| preview wnd(insert)  | `ctrl + d` |
+| function              | short key   |
+| --------------------- | ----------- |
+| find files            | `ctrl + p`  |
+| find content gloabal  | `ctrl + f`  |
+| find file symbol      | `<leader>s` |
+| find workspace symbol | `<leader>S` |
+|                       |             |
+| close                 | `ctrl + c`  |
+| next(insert)          | `ctrl + j`  |
+| previous(insert)      | `ctrl + k`  |
+|                       |             |
+| history(insert)       | `ctrl + n`  |
+| history(insert)       | `ctrl + p`  |
+|                       |             |
+| preview wnd(insert)   | `ctrl + u`  |
+| preview wnd(insert)   | `ctrl + d`  |
 
 ## Comment
 

@@ -48,6 +48,9 @@ packer.startup(function(use)
   -- telescope extensions
   use("LinArcX/telescope-env.nvim")
   use("nvim-telescope/telescope-ui-select.nvim")
+  use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use("nvim-telescope/telescope-live-grep-args.nvim")
+  use("nvim-telescope/telescope-dap.nvim")
 
   -- NOTE: treesitter for code highlight    code folding    block choose
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -90,10 +93,5 @@ packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
-  -- use {
-  --   "skanehira/preview-markdown.vim",
-  --   opt = true,
-  --   cmd = "PreviewMarkdown",
-  -- }
 
 end)
