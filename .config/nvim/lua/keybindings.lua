@@ -128,7 +128,6 @@ map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opt)
 
 -- NOTE: mimimap
 map("n", "<A-m>", ":MinimapToggle<CR>", opt)
-map("n", "<A-M>", ":MinimapRefresh<CR>", opt)
 
 local pluginKeys = {}
 

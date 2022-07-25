@@ -16,8 +16,8 @@ null_ls.setup({
   sources = {
     formatting.autopep8, -- for python
     -- formatting.stylua, -- for lua
-    formatting.clang_format, -- for cpp
-    formatting.prettier.with({ -- 只比默认配置少了 markdown
+    -- formatting.clang_format, -- for cpp
+    formatting.prettier.with({
       filetypes = {
         "javascript",
         "javascriptreact",
@@ -31,6 +31,7 @@ null_ls.setup({
         "json",
         "yaml",
         "graphql",
+        "markdown",
       },
       prefer_local = "node_modules/.bin",
     }),

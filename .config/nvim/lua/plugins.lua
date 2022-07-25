@@ -62,7 +62,7 @@ packer.startup(function(use)
   use("onsails/lspkind-nvim")
   -- format
   -- use("mhartington/formatter.nvim")
-  -- use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+  use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 
   -- NOTE: cmp
   use("hrsh7th/nvim-cmp")
