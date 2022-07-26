@@ -9,6 +9,7 @@
 - lazygit
 - prettier
 - flake8
+- debugpy
 
 # Installation
 
@@ -26,9 +27,12 @@
 
 # TODO
 
-- debug for python
+- redpoint save ; short key for debug
 - qt config
 - markdown config
+- snippets
+- cmake
+- which key
 - readme for add     code highlight    lsp config    code format(lsp or null_lsp)
 
 # Short Key

@@ -104,7 +104,7 @@ map("n", "<C-w>", ":Bdelete!<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
-map("n", "<leader>bo", ":BWipeout other<CR>", opt)
+map("n", "to", ":BWipeout other<CR>", opt)
 
 -- NOTE: Gitsigns
 -- Navigation
@@ -233,7 +233,7 @@ pluginKeys.telescopeList = {
 -- NOTE: outline
 map("n", "<leader>v", ":SymbolsOutline<CR>", opt)
 pluginKeys.outlineKeymap = {
-  close = {"<Esc>", "q"},
+  close = { "<Esc>", "q" },
   goto_location = "<Cr>",
   focus_location = "o",
   hover_symbol = "gh",
@@ -241,5 +241,43 @@ pluginKeys.outlineKeymap = {
   rename_symbol = "r",
   code_actions = "a",
 }
+
+-- NOTE: nvim-dap
+pluginKeys.mapDAP = function()
+  -- 开始
+  -- map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
+  -- 结束 (dapui无法自动关闭可能是bug，手动关闭能想到的一切)
+  map(
+    "n",
+    "<leader>de",
+    ":lua require'dap'.close()<CR>"
+    .. ":lua require'dap'.terminate()<CR>"
+    .. ":lua require'dap.repl'.close()<CR>"
+    .. ":lua require'dapui'.close()<CR>"
+    .. ":lua require('dap').clear_breakpoints()<CR>"
+    .. "<C-w>o<CR>",
+    opt
+  )
+  -- 继续
+  map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
+  -- 设置断点
+  map("n", "<leader>dt", ":lua require('dap').toggle_breakpoint()<CR>", opt)
+  map("n", "<leader>dT", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
+  map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
+  --  stepOver, stepOut, stepInto
+  map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
+  map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
+  map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
+  -- 弹窗
+  map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
+
+  -- keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
+  -- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
+  -- keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+  -- keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+  -- keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+  -- keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+  -- keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+end
 
 return pluginKeys
