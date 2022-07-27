@@ -17,8 +17,3 @@ vim.cmd [[
 ]]
 
   -- autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-
-  -- augroup _load_break_points
-  --   autocmd!
-  --   autocmd FileType c,cpp,python,lua :lua require('ndap.dap-util').load_breakpoints()
-  -- augroup end

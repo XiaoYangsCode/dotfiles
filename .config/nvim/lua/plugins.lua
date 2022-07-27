@@ -39,11 +39,6 @@ packer.startup(function(use)
     -- end
   }
 
-  -- NOTE: dashboard-nvim
-  use("glepnir/dashboard-nvim")
-  -- project for dashboard
-  use("ahmedkhalf/project.nvim")
-
   -- NOTE: telescope search enhance and ui for select
   use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- telescope extensions
@@ -52,6 +47,12 @@ packer.startup(function(use)
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
   use("nvim-telescope/telescope-live-grep-args.nvim")
   use("nvim-telescope/telescope-dap.nvim")
+  -- project for dashboard
+  use("ahmedkhalf/project.nvim")
+
+  -- NOTE: dashboard-nvim
+  use("glepnir/dashboard-nvim")
+
 
   -- NOTE: treesitter for code highlight    code folding    block choose
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -89,7 +90,6 @@ packer.startup(function(use)
   use("mfussenegger/nvim-dap")
   use("rcarriga/nvim-dap-ui")
   use("theHamsta/nvim-dap-virtual-text")
-  -- use("mfussenegger/nvim-dap-python")    -- debug python
   -- use { "jbyuki/one-small-step-for-vimkind", module = "osv" } -- debug any Lua code running in a Neovim instance
   use {
     "sakhnik/nvim-gdb",
