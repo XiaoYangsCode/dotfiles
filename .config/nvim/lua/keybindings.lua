@@ -261,10 +261,11 @@ pluginKeys.mapDAP = function()
   -- 继续
   map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
-  -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint(); require'ndap.dap-util'.store_breakpoints(true)<cr>", opt)
-  map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
+  map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint(); require'ndap.dap-util'.store_breakpoints(true)<cr>", opt)
+  -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
   map("n", "<leader>dT", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
-  map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
+  -- map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
+  map("n", "<leader>dC", "<cmd>lua require('dap').clear_breakpoints(); require'ndap.dap-util'.remove_allbreakpoints()<cr>", opt)
   --  stepOver, stepOut, stepInto
   map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
   map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)

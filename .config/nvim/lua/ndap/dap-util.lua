@@ -64,6 +64,12 @@ local bp_base_dir = os.getenv("HOME") .. "/.cache/dap-breakpoint/"
 local breakpoints = require('dap.breakpoints')
 local utils = require("utils")
 
+function M.remove_allbreakpoints()
+  if utils.exists(bp_base_dir) then
+    os.execute("rm -r " .. bp_base_dir .. "*.json")
+  end
+end
+
 function M.store_breakpoints()
   if not utils.exists(bp_base_dir) then
     os.execute("mkdir -p " .. bp_base_dir)
