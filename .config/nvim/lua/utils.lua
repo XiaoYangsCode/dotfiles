@@ -14,17 +14,17 @@ local M = {}
 --   return ending == "" or str:sub(- #ending) == ending
 -- end
 
--- -- file exist?
--- M.exists = function(file)
---   local ok, err, code = os.rename(file, file)
---   if not ok then
---     if code == 13 then
---       -- Permission denied, but it exists
---       return true
---     end
---   end
---   return ok, err
--- end
+-- file exist?
+M.exists = function(file)
+  local ok, err, code = os.rename(file, file)
+  if not ok then
+    if code == 13 then
+      -- Permission denied, but it exists
+      return true
+    end
+  end
+  return ok, err
+end
 
 
 M.SaveAndExit = function()

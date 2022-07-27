@@ -27,11 +27,11 @@
 
 # TODO
 
-- redpoint save ; short key for debug
-- qt config
 - markdown config
+- qt config
 - snippets
 - cmake
+- debug for cpp
 - which key
 - readme for add     code highlight    lsp config    code format(lsp or null_lsp)
 
