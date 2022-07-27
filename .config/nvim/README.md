@@ -27,7 +27,6 @@
 
 # TODO
 
-- ctr+r config
 - qt config
 - snippets
 - cmake

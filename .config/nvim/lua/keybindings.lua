@@ -66,6 +66,8 @@ map("n", "<leader>hl", ":HopLine<CR>", opt)
 map("n", "<leader>hw", ":HopWord<CR>", opt)
 map("n", "<leader>ha", ":HopAnywhere<CR>", opt)
 
+map("n", "<C-r>", ":lua require('utils').run_files()<CR>", opt)
+
 -- NOTE: FileExpoler
 -- no highlight
 map("n", "<leader>l", ":nohl<cr>", opt)
@@ -87,9 +89,11 @@ map("n", "Q", ":qa!<CR>", opt)
 -- NOTE: terminal
 map("n", "<C-\\>", ":ToggleTerm<CR>", opt)
 map("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opt)
-map("n", "<leader>t", ":sp | terminal<CR>", opt)
-map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
-map("t", "<Esc>", "<C-\\><C-n>", opt)
+map("n", "<leader>t", ":ToggleTerm size=10 direction=horizontal<CR>", opt)
+map("n", "<leader>vt", ":ToggleTerm direction=tab<CR>", opt)
+-- map("n", "<leader>t", ":sp | terminal<CR>", opt)
+-- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+map("t", "<Esc><Esc>", "<C-\\><C-n>", opt)
 map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-k>", [[ <C-\><C-N><C-w>k ]], opt)
