@@ -27,13 +27,13 @@
 
 # TODO
 
-- markdown config
+- ctr+r config
 - qt config
 - snippets
 - cmake
 - debug for cpp
 - which key
-- readme for add     code highlight    lsp config    code format(lsp or null_lsp)
+- readme for add code highlight lsp config code format(lsp or null_lsp)
 
 # Short Key
 
@@ -183,3 +183,31 @@
 | toggle preview | `gp`      |
 | rename symbol  | `r`       |
 | code action    | `a`       |
+
+## Debuger
+
+| function                    | short key    |
+| --------------------------- | ------------ |
+| toggle breakpoint           | `<leader>dt` |
+| toggle condition breakpoint | `<leader>dT` |
+| clear all breakpoint        | `<leader>dC` |
+|                             |              |
+| continue                    | `<leader>dc` |
+| step over                   | `<leader>dj` |
+| step out                    | `<leader>dk` |
+| step into                   | `<leader>dl` |
+| read value                  | `<leader>dh` |
+
+## Markdown
+
+| function                     | short key |
+| ---------------------------- | --------- |
+| close one folder             | `zc`      |
+| close one folder recursively | `zC`      |
+| open one folder              | `za`      |
+| open one folder recursively  | `zA`      |
+| close all folders            | `zM`      |
+| open all folders             | `zR`      |
+|                              |           |
+| move to previous head        | `[[`      |
+| move to next head            | `]]`      |

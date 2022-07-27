@@ -134,48 +134,48 @@ local pluginKeys = {}
 
 -- NOTE: cmp
 pluginKeys.cmp = function(cmp)
-  return {
-    -- 出现补全
-    ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    -- 取消
-    ["<A-,>"] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    -- 上一个
-    ["<A-k>"] = cmp.mapping.select_prev_item(),
-    -- 下一个
-    ["<A-j>"] = cmp.mapping.select_next_item(),
-    -- 确认
-    ["<CR>"] = cmp.mapping.confirm({
-      select = true,
-      behavior = cmp.ConfirmBehavior.Replace,
-    }),
-    -- 如果窗口内容太多，可以滚动
-    ["<A-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-    ["<A-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-  }
+    return {
+        -- 出现补全
+        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        -- 取消
+        ["<A-,>"] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        -- 上一个
+        ["<A-k>"] = cmp.mapping.select_prev_item(),
+        -- 下一个
+        ["<A-j>"] = cmp.mapping.select_next_item(),
+        -- 确认
+        ["<CR>"] = cmp.mapping.confirm({
+            select = true,
+            behavior = cmp.ConfirmBehavior.Replace,
+        }),
+        -- 如果窗口内容太多，可以滚动
+        ["<A-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<A-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+    }
 end
 
 -- NOTE: lsp call back
 pluginKeys.mapLSP = function(mapbuf)
-  -- rename
-  bufmap(mapbuf, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-  -- code action
-  bufmap(mapbuf, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
-  -- go xx
-  bufmap(mapbuf, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
-  bufmap(mapbuf, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-  bufmap(mapbuf, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  bufmap(mapbuf, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
-  bufmap(mapbuf, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
-  -- diagnostic
-  bufmap(mapbuf, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-  bufmap(mapbuf, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-  bufmap(mapbuf, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  -- format
-  bufmap(mapbuf, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
-  bufmap(mapbuf, 'v', '<leader>f', "<ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>", opt)
+    -- rename
+    bufmap(mapbuf, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+    -- code action
+    bufmap(mapbuf, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+    -- go xx
+    bufmap(mapbuf, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+    bufmap(mapbuf, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+    bufmap(mapbuf, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+    bufmap(mapbuf, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+    bufmap(mapbuf, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+    -- diagnostic
+    bufmap(mapbuf, "n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+    bufmap(mapbuf, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+    bufmap(mapbuf, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+    -- format
+    bufmap(mapbuf, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+    bufmap(mapbuf, 'v', '<leader>f', "<ESC><cmd>lua vim.lsp.buf.range_formatting()<CR>", opt)
 end
 
 -- NOTE: nvim-tree
@@ -183,23 +183,23 @@ end
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
-  -- 打开文件或文件夹
-  { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
-  -- 分屏打开文件
-  { key = "v", action = "vsplit" },
-  { key = "h", action = "split" },
-  -- 显示隐藏文件
-  { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
-  { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
-  -- 文件操作
-  { key = "<F5>", action = "refresh" },
-  { key = "a", action = "create" },
-  { key = "d", action = "remove" },
-  { key = "r", action = "rename" },
-  { key = "x", action = "cut" },
-  { key = "c", action = "copy" },
-  { key = "p", action = "paste" },
-  -- { key = "s", action = "system_open" },
+    -- 打开文件或文件夹
+    { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+    -- 分屏打开文件
+    { key = "v", action = "vsplit" },
+    { key = "h", action = "split" },
+    -- 显示隐藏文件
+    { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
+    { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+    -- 文件操作
+    { key = "<F5>", action = "refresh" },
+    { key = "a", action = "create" },
+    { key = "d", action = "remove" },
+    { key = "r", action = "rename" },
+    { key = "x", action = "cut" },
+    { key = "c", action = "copy" },
+    { key = "p", action = "paste" },
+    -- { key = "s", action = "system_open" },
 }
 
 -- NOTE: Telescope
@@ -213,73 +213,75 @@ map("n", "<leader>S", ":Telescope lsp_workspace_symbols<CR>", opt)
 map("n", "<leader>p", ":Telescope projects<CR>", opt)
 -- insert mode short key for telescope
 pluginKeys.telescopeList = {
-  i = {
-    -- 上下移动
-    ["<C-j>"] = "move_selection_next",
-    ["<C-k>"] = "move_selection_previous",
-    ["<Down>"] = "move_selection_next",
-    ["<Up>"] = "move_selection_previous",
-    -- 历史记录
-    ["<C-n>"] = "cycle_history_next",
-    ["<C-p>"] = "cycle_history_prev",
-    -- 关闭窗口
-    ["<C-c>"] = "close",
-    -- 预览窗口上下滚动
-    ["<C-u>"] = "preview_scrolling_up",
-    ["<C-d>"] = "preview_scrolling_down",
-  },
+    i = {
+        -- 上下移动
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+        ["<Down>"] = "move_selection_next",
+        ["<Up>"] = "move_selection_previous",
+        -- 历史记录
+        ["<C-n>"] = "cycle_history_next",
+        ["<C-p>"] = "cycle_history_prev",
+        -- 关闭窗口
+        ["<C-c>"] = "close",
+        -- 预览窗口上下滚动
+        ["<C-u>"] = "preview_scrolling_up",
+        ["<C-d>"] = "preview_scrolling_down",
+    },
 }
 
 -- NOTE: outline
 map("n", "<leader>v", ":SymbolsOutline<CR>", opt)
 pluginKeys.outlineKeymap = {
-  close = { "<Esc>", "q" },
-  goto_location = "<Cr>",
-  focus_location = "o",
-  hover_symbol = "gh",
-  toggle_preview = "gp",
-  rename_symbol = "r",
-  code_actions = "a",
+    close = { "<Esc>", "q" },
+    goto_location = "<Cr>",
+    focus_location = "o",
+    hover_symbol = "gh",
+    toggle_preview = "gp",
+    rename_symbol = "r",
+    code_actions = "a",
 }
 
 -- NOTE: nvim-dap
 pluginKeys.mapDAP = function()
-  -- 开始
-  -- map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
-  -- 结束 (dapui无法自动关闭可能是bug，手动关闭能想到的一切)
-  -- map(
-  --   "n",
-  --   "<leader>de",
-  --   ":lua require'dap'.close()<CR>"
-  --   .. ":lua require'dap'.terminate()<CR>"
-  --   .. ":lua require'dap.repl'.close()<CR>"
-  --   .. ":lua require'dapui'.close()<CR>"
-  --   .. ":lua require('dap').clear_breakpoints()<CR>"
-  --   .. "<C-w>o<CR>",
-  --   opt
-  -- )
-  -- 继续
-  map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
-  -- 设置断点
-  map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint(); require'ndap.dap-util'.store_breakpoints(true)<cr>", opt)
-  -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
-  map("n", "<leader>dT", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
-  -- map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
-  map("n", "<leader>dC", "<cmd>lua require('dap').clear_breakpoints(); require'ndap.dap-util'.remove_allbreakpoints()<cr>", opt)
-  --  stepOver, stepOut, stepInto
-  map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
-  map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
-  map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
-  -- 弹窗
-  map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
+    -- 开始
+    -- map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
+    -- 结束 (dapui无法自动关闭可能是bug，手动关闭能想到的一切)
+    -- map(
+    --   "n",
+    --   "<leader>de",
+    --   ":lua require'dap'.close()<CR>"
+    --   .. ":lua require'dap'.terminate()<CR>"
+    --   .. ":lua require'dap.repl'.close()<CR>"
+    --   .. ":lua require'dapui'.close()<CR>"
+    --   .. ":lua require('dap').clear_breakpoints()<CR>"
+    --   .. "<C-w>o<CR>",
+    --   opt
+    -- )
+    -- 继续
+    map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
+    -- 设置断点
+    map("n", "<leader>dt",
+        "<cmd>lua require'dap'.toggle_breakpoint(); require'ndap.dap-util'.store_breakpoints(true)<cr>", opt)
+    -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
+    map("n", "<leader>dT", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
+    -- map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
+    map("n", "<leader>dC",
+        "<cmd>lua require('dap').clear_breakpoints(); require'ndap.dap-util'.remove_allbreakpoints()<cr>", opt)
+    --  stepOver, stepOut, stepInto
+    map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
+    map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
+    map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
+    -- 弹窗
+    map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
 
-  -- keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
-  -- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
-  -- keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
-  -- keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
-  -- keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
-  -- keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
-  -- keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+    -- keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
+    -- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
+    -- keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+    -- keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+    -- keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+    -- keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+    -- keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 end
 
 return pluginKeys

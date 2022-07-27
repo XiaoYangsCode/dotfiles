@@ -28,6 +28,8 @@ require("plugin-config.autocommand")
 require("plugin-config.hop")
 require("plugin-config.toggleterm")
 require("plugin-config.nvim-lightbulb")
+require("plugin-config.vim-markdown")
+-- require("plugin-config.tabout")
 -- 内置LSP
 require("lsp")
 -- DAP
