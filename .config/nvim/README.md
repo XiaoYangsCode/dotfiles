@@ -116,22 +116,23 @@
 
 ## Telescope
 
-| function              | short key   |
-| --------------------- | ----------- |
-| find files            | `ctrl + p`  |
-| find content gloabal  | `ctrl + f`  |
-| find file symbol      | `<leader>s` |
-| find workspace symbol | `<leader>S` |
-|                       |             |
-| close                 | `ctrl + c`  |
-| next(insert)          | `ctrl + j`  |
-| previous(insert)      | `ctrl + k`  |
-|                       |             |
-| history(insert)       | `ctrl + n`  |
-| history(insert)       | `ctrl + p`  |
-|                       |             |
-| preview wnd(insert)   | `ctrl + u`  |
-| preview wnd(insert)   | `ctrl + d`  |
+| function                                   | short key   |
+| ------------------------------------------ | ----------- |
+| find files                                 | `ctrl + p`  |
+| find content gloabal (with args no hidden) | `ctrl + f`  |
+| find content gloabal (with hidden no args) | `ctrl + f`  |
+| find file symbol                           | `<leader>s` |
+| find workspace symbol                      | `<leader>S` |
+|                                            |             |
+| close                                      | `ctrl + c`  |
+| next(insert)                               | `ctrl + j`  |
+| previous(insert)                           | `ctrl + k`  |
+|                                            |             |
+| history(insert)                            | `ctrl + n`  |
+| history(insert)                            | `ctrl + p`  |
+|                                            |             |
+| preview wnd(insert)                        | `ctrl + u`  |
+| preview wnd(insert)                        | `ctrl + d`  |
 
 ## Comment
 
