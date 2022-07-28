@@ -210,28 +210,38 @@ M.find_git_ancestor = function(startpath)
     end)
 end
 
+
+M.run_test = function()
+    -- local total_buf_name = vim.api.nvim_buf_get_name(0)
+    -- local root_path = M.find_git_ancestor(total_buf_name)
+    -- print(root_path)
+
+    -- local total_buf_name = vim.api.nvim_buf_get_name(0)
+    -- local table = vim.fn.split(total_buf_name, "/")
+    -- local ui_name = table[#table]
+    -- local py_name = "ui_" .. ui_name:gsub(".lua", ".ui")
+    -- local total_py_name = total_buf_name:gsub(ui_name, py_name)
+    -- print(py_name)
+    -- print(total_py_name)
+    -- local suffix = total_buf_name:sub(-3)
+    -- print(suffix)
+end
+
 M.run_files = function()
     if vim.api.nvim_buf_get_option(0, "filetype") == "markdown" then -- cutomize difference language comment marker
         vim.api.nvim_command(":MarkdownPreviewToggle")
     elseif vim.api.nvim_buf_get_option(0, "filetype") == "python" then
         local buf_name = vim.api.nvim_buf_get_name(0)
         os.execute("python3 /" .. buf_name)
+    else
+        print("Try to run unknown filetype!!")
     end
 end
-
 -- elseif vim.api.nvim_buf_get_option(0, "filetype") == "shell" then
 
-M.run_test = function()
-    local total_buf_name = vim.api.nvim_buf_get_name(0)
-    local table = vim.fn.split(total_buf_name, "/")
-    local ui_name = table[#table]
-    local py_name = "ui_" .. ui_name:gsub(".lua", ".ui")
-    local total_py_name = total_buf_name:gsub(ui_name, py_name)
-    print(py_name)
-    print(total_py_name)
-    local suffix = total_buf_name:sub(-3)
-    print(suffix)
-end
+-- M.search_config_files = function()
+--     require('telescope.builtin').live_grep({ search_dirs = { '~/dotfiles/.config' } })
+-- end
 
 M.run_qt_designer = function()
     os.execute('pyside6-designer')

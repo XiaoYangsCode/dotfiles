@@ -4,7 +4,7 @@
 - xclip
 - code-minimap
 - npm
-- rg
+- rg(ripgrep)
 - fd
 - lazygit
 - prettier

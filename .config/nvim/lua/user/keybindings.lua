@@ -217,16 +217,18 @@ pluginKeys.nvimTreeList = {
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep_args<CR>", opt)
+-- map("n", "<C-d>", ":lua require'user.utils'.search_config_files()<CR>", opt)
+map("n", "<C-d>", ":Telescope live_grep<CR>", opt)
 -- search symbols
 map("n", "<leader>s", ":Telescope lsp_document_symbols<CR>", opt)
-map("n", "<leader>S", ":Telescope lsp_workspace_symbols<CR>", opt)
+map("n", "<leader>S", ":Telescope lsp_dynamic_workspace_symbols<CR>", opt)
 map("n", "<leader>p", ":Telescope projects<CR>", opt)
 -- insert mode short key for telescope
 pluginKeys.telescopeList = {
     i = {
         -- 上下移动
-        ["<C-j>"] = "move_selection_next",
-        ["<C-k>"] = "move_selection_previous",
+        ["<A-j>"] = "move_selection_next",
+        ["<A-k>"] = "move_selection_previous",
         ["<Down>"] = "move_selection_next",
         ["<Up>"] = "move_selection_previous",
         -- 历史记录
