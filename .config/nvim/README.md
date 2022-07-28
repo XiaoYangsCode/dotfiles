@@ -27,7 +27,6 @@
 
 # TODO
 
-- disable md zc
 - change lua config to users
 - cmake
 - debug for cpp

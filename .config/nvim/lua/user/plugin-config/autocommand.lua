@@ -11,7 +11,7 @@ vim.cmd [[
 
   augroup _load_break_points
     autocmd!
-    autocmd FileType c,cpp,python,lua :lua require('ndap.dap-util').load_breakpoints()
+    autocmd FileType c,cpp,python,lua :lua require('user.dap.dap-util').load_breakpoints()
   augroup end
 
 ]]

@@ -63,10 +63,10 @@ local function config_debuggers()
   -- load from json file
   -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
   -- config per launage
-  -- require("ndap.dap-cpp")
+  -- require("user.dap.dap-cpp")
 
-  require("ndap.dap-python")
-  -- require("ndap.dap-lua")
+  require("user.dap.dap-python")
+  -- require("user.dap.dap-lua")
 end
 
 function M.setup()
@@ -75,7 +75,7 @@ function M.setup()
   config_dapui()
   config_debuggers() -- Debugger
   -- 绑定 nvim-dap 快捷键
-  require("keybindings").mapDAP()
+  require("user.keybindings").mapDAP()
 end
 
 return M

@@ -1,4 +1,4 @@
-local utils = require("utils")
+local utils = require("user.utils")
 
 local python_root_files = {
   -- 'WORKSPACE', -- added for Bazel; items below are from default config

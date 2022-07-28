@@ -66,7 +66,7 @@ map("n", "<leader>hl", ":HopLine<CR>", opt)
 map("n", "<leader>hw", ":HopWord<CR>", opt)
 map("n", "<leader>ha", ":HopAnywhere<CR>", opt)
 
-map("n", "<C-r>", ":lua require('utils').run_files()<CR>", opt)
+map("n", "<C-r>", ":lua require('user.utils').run_files()<CR>", opt)
 
 -- NOTE: FileExpoler
 -- no highlight
@@ -79,7 +79,7 @@ map("n", "<leader>q", ":q<cr>", opt)
 map("n", "<leader>d", ":bp<bar>sp<bar>bn<bar>bd<CR>", opt)
 map("n", "<leader>D", ":bp<bar>sp<bar>bn<bar>bd<CR>", opt)
 -- exit whole program
-map("n", "ZZ", ":lua require('utils').SaveAndExit()<cr>", opt)
+map("n", "ZZ", ":lua require('user.utils').SaveAndExit()<cr>", opt)
 -- quit
 -- keymap("n", "q", ":q<CR>", opts)
 map("n", "qq", ":q!<CR>", opt)
@@ -135,10 +135,10 @@ map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opt)
 map("n", "<A-m>", ":MinimapToggle<CR>", opt)
 
 -- NOTE: qt
-map("n", "<A-d>", "<cmd>lua require('utils').run_test()<CR>", opt)
-map("n", "<A-q>", "<cmd>lua require('utils').run_qt_designer()<CR>", opt)
-map("n", "<A-w>", "<cmd>lua require('utils').run_qt_designer_args()<CR>", opt)
-map("n", "<A-u>", "<cmd>lua require('utils').run_pyuic()<CR>", opt)
+map("n", "<A-d>", "<cmd>lua require('user.utils').run_test()<CR>", opt)
+map("n", "<A-q>", "<cmd>lua require('user.utils').run_qt_designer()<CR>", opt)
+map("n", "<A-w>", "<cmd>lua require('user.utils').run_qt_designer_args()<CR>", opt)
+map("n", "<A-u>", "<cmd>lua require('user.utils').run_pyuic()<CR>", opt)
 
 local pluginKeys = {}
 
@@ -272,12 +272,12 @@ pluginKeys.mapDAP = function()
     map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
     -- 设置断点
     map("n", "<leader>dt",
-        "<cmd>lua require'dap'.toggle_breakpoint(); require'ndap.dap-util'.store_breakpoints(true)<cr>", opt)
+        "<cmd>lua require'dap'.toggle_breakpoint(); require'user.dap.dap-util'.store_breakpoints(true)<cr>", opt)
     -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
     map("n", "<leader>dT", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opt)
     -- map("n", "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", opt)
     map("n", "<leader>dC",
-        "<cmd>lua require('dap').clear_breakpoints(); require'ndap.dap-util'.remove_allbreakpoints()<cr>", opt)
+        "<cmd>lua require('dap').clear_breakpoints(); require'user.dap.dap-util'.remove_allbreakpoints()<cr>", opt)
     --  stepOver, stepOut, stepInto
     map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
     map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)

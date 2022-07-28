@@ -1,4 +1,4 @@
-local util = require("utils")
+local util = require("user.utils")
 
 return {
   default_config = {

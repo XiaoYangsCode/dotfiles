@@ -38,8 +38,8 @@ local cmp_config = {
   }, { { name = "buffer" }, { name = "path" } }),
 
   -- 快捷键设置
-  mapping = require("keybindings").cmp(cmp),
-  formatting = require('lsp.ui').formatting
+  mapping = require("user.keybindings").cmp(cmp),
+  formatting = require("user.lsp.ui").formatting
 }
 
 -- / 查找模式使用 buffer 源

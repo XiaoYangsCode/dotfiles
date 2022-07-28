@@ -59,7 +59,7 @@ local function lsp_highlight_document(client)
   end
 end
 
-local mapLSP = require('keybindings').mapLSP
+local mapLSP = require('user.keybindings').mapLSP
 
 M.on_attach = function(client, bufnr)
   -- if client.name == "tsserver" or client.name == "clangd" then

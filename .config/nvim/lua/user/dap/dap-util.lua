@@ -3,8 +3,8 @@ local dap = require 'dap'
 
 -- refresh config
 M.reload_continue = function()
-  package.loaded['ndap.dap-config'] = nil
-  require('ndap.dap-config').setup()
+  package.loaded['user.dap.dap-config'] = nil
+  require('user.dap.dap-config').setup()
   dap.continue()
 end
 
@@ -61,8 +61,8 @@ end
 
 -- persist breakpoint
 local bp_base_dir = os.getenv("HOME") .. "/.cache/dap-breakpoint/"
-local breakpoints = require('dap.breakpoints')
-local utils = require("utils")
+local breakpoints = require("dap.breakpoints")
+local utils = require("user.utils")
 
 function M.remove_allbreakpoints()
   if utils.exists(bp_base_dir) then
