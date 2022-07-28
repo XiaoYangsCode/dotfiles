@@ -27,7 +27,6 @@
 
 # TODO
 
-- change lua config to users
 - cmake
 - debug for cpp
 - which key

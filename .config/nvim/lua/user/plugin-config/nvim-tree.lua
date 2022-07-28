@@ -38,11 +38,31 @@
 --
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
+-- vim.g.nvim_tree_icons = {
+--   default = "",
+--   symlink = "",
+--   git = {
+--     unstaged = "",
+--     staged = "S",
+--     unmerged = "",
+--     renamed = "➜",
+--     deleted = "",
+--     untracked = "U",
+--     ignored = "◌",
+--   },
+--   folder = {
+--     default = "",
+--     open = "",
+--     empty = "",
+--     empty_open = "",
+--     symlink = "",
+--   },
+-- }
 
 local status, nvim_tree = pcall(require, "nvim-tree")
 if not status then
     vim.notify("没有找到 nvim-tree")
-  return
+    return
 end
 
 -- 列表操作快捷键
@@ -50,7 +70,7 @@ local list_keys = require('user.keybindings').nvimTreeList
 nvim_tree.setup({
     -- 不显示 git 状态图标
     git = {
-        enable = false,
+        enable = true,
     },
     -- project plugin 需要这样设置
     update_cwd = true,
@@ -60,8 +80,8 @@ nvim_tree.setup({
     },
     -- 隐藏 .文件 和 node_modules 文件夹
     filters = {
-        dotfiles = true,
-        custom = { 'node_modules' },
+        dotfiles = false,
+        custom = { 'node_modules', '.git' },
     },
     view = {
         -- 宽度
@@ -81,12 +101,40 @@ nvim_tree.setup({
         -- 显示图标
         signcolumn = 'yes',
     },
+    renderer = {
+        indent_markers = {
+            enable = false,
+            icons = {
+                corner = "└",
+                edge = "│",
+                item = "│",
+                none = " ",
+            },
+        },
+        icons = {
+            webdev_colors = true,
+            glyphs = {
+                git = {
+                    -- unstaged = "✗",
+                    -- staged = "✓",
+                    -- untracked = "★",
+                    unstaged = "",
+                    staged = "S",
+                    untracked = "U",
+                    unmerged = "",
+                    renamed = "➜",
+                    deleted = "",
+                    ignored = "◌",
+                },
+            },
+        },
+    },
     actions = {
         open_file = {
             -- 首次打开大小适配
             resize_window = true,
             -- 打开文件时关闭
-            quit_on_open = true,
+            quit_on_open = false,
         },
     },
     -- wsl install -g wsl-open
