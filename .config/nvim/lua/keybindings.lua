@@ -134,6 +134,12 @@ map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opt)
 -- NOTE: mimimap
 map("n", "<A-m>", ":MinimapToggle<CR>", opt)
 
+-- NOTE: qt
+map("n", "<A-d>", "<cmd>lua require('utils').run_test()<CR>", opt)
+map("n", "<A-q>", "<cmd>lua require('utils').run_qt_designer()<CR>", opt)
+map("n", "<A-w>", "<cmd>lua require('utils').run_qt_designer_args()<CR>", opt)
+map("n", "<A-u>", "<cmd>lua require('utils').run_pyuic()<CR>", opt)
+
 local pluginKeys = {}
 
 -- NOTE: cmp

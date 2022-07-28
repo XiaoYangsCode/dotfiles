@@ -220,4 +220,48 @@ M.run_files = function()
 end
 
 -- elseif vim.api.nvim_buf_get_option(0, "filetype") == "shell" then
+
+M.run_test = function()
+    local total_buf_name = vim.api.nvim_buf_get_name(0)
+    local table = vim.fn.split(total_buf_name, "/")
+    local ui_name = table[#table]
+    local py_name = "ui_" .. ui_name:gsub(".lua", ".ui")
+    local total_py_name = total_buf_name:gsub(ui_name, py_name)
+    print(py_name)
+    print(total_py_name)
+    local suffix = total_buf_name:sub(-3)
+    print(suffix)
+end
+
+M.run_qt_designer = function()
+    os.execute('pyside6-designer')
+    print("open qtdesigner success")
+end
+
+M.run_qt_designer_args = function()
+    local total_buf_name = vim.api.nvim_buf_get_name(0)
+    local suffix = total_buf_name:sub(-3)
+    if (suffix ~= ".ui") then
+        print("suffix is not ui for qt")
+        return
+    end
+    os.execute('pyside6-designer /' .. total_buf_name)
+    print("open qtdesigner success, path : " .. total_buf_name)
+end
+
+M.run_pyuic = function()
+    local total_buf_name = vim.api.nvim_buf_get_name(0)
+    local suffix = total_buf_name:sub(-3)
+    if (suffix ~= ".ui") then
+        print("suffix is not ui for qt")
+        return
+    end
+    local table = vim.fn.split(total_buf_name, "/")
+    local ui_name = table[#table]
+    local py_name = "ui_" .. ui_name:gsub(".ui", ".py")
+    local total_py_name = total_buf_name:gsub(ui_name, py_name)
+    os.execute("pyside6-uic /" .. total_buf_name .. " > /" .. total_py_name)
+    print("uic success, path : " .. total_py_name)
+end
+
 return M

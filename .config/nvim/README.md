@@ -27,11 +27,12 @@
 
 # TODO
 
-- qt config
-- snippets
+- disable md zc
+- change lua config to users
 - cmake
 - debug for cpp
 - which key
+- snippets
 - readme for add code highlight lsp config code format(lsp or null_lsp)
 
 # Short Key
