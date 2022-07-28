@@ -137,8 +137,12 @@ nvim_tree.setup({
             quit_on_open = false,
         },
     },
+    trash = {
+        cmd = "trash",
+        require_confirm = true,
+    },
     -- wsl install -g wsl-open
-    -- https://github.com/4U6U57/wsl-open/
+    -- https://github.com/4U6U57/wsl-open
     system_open = {
         cmd = 'open', -- 直接设置为 open
     },
