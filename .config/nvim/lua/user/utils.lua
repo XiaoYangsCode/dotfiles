@@ -6,13 +6,13 @@ local uv = vim.loop
 
 local M = {}
 
--- M.starts_with = function(str, start)
---   return str:sub(1, #start) == start
--- end
+M.starts_with = function(str, start)
+  return str:sub(1, #start) == start
+end
 
--- M.ends_with = function(str, ending)
---   return ending == "" or str:sub(- #ending) == ending
--- end
+M.ends_with = function(str, ending)
+  return ending == "" or str:sub(- #ending) == ending
+end
 
 -- file exist?
 M.exists = function(file)
@@ -212,6 +212,8 @@ end
 
 
 M.run_test = function()
+    local table = vim.fn.readdir("/home/lt/.config/nvim/lua/user/plugin-config")
+    print(#table)
     -- local total_buf_name = vim.api.nvim_buf_get_name(0)
     -- local root_path = M.find_git_ancestor(total_buf_name)
     -- print(root_path)

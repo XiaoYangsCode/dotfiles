@@ -31,6 +31,7 @@
 - debug for cpp
 - which key
 - snippets
+- ~~refresh nvim-tree after git status change~~
 - readme for add code highlight lsp config code format(lsp or null_lsp)
 
 # Short Key
