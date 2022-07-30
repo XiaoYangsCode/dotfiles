@@ -4,12 +4,22 @@
 - xclip
 - code-minimap
 - npm
-- rg(ripgrep)
-- fd
+- rg (ripgrep)
+- fd (file finder)
 - lazygit
-- prettier
+- cmake
 - flake8
-- debugpy
+- prettier (formaters)
+- autopep8 (format for python)
+- cmakelang (format for cmake)
+- debugpy (adapter for python)
+- lldb (adapter for cpp)
+
+```bash
+sudo pacman -S alacritty xclip code-minimap ripgrep fd lazygit cmake flake8 prettier \
+autopep8 lldb
+pip3 install debugpy cmakelang
+```
 
 # Installation
 
@@ -23,16 +33,13 @@
 - code highlight nvim-treesitter.lua
 - install language server
 - add language config lsp-installer.lua
+- add format for language
 - snippets cmp.lua
 
 # TODO
 
-- cmake
-- debug for cpp
 - which key
 - snippets
-- ~~refresh nvim-tree after git status change~~
-- readme for add code highlight lsp config code format(lsp or null_lsp)
 
 # Short Key
 

@@ -7,17 +7,20 @@ packer.startup(function(use)
     use("ful1e5/onedark.nvim")
     -- need install   yay -S code-minimap    command Minimap
     use("wfxr/minimap.vim")
+    use("nvim-lua/plenary.nvim")
+    use("kyazdani42/nvim-web-devicons")
+    use("moll/vim-bbye")
 
     -- NOTE: endior enhance
     -- indent-blankline
     use("lukas-reineke/indent-blankline.nvim")
     -- nvim-tree
-    use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+    use("kyazdani42/nvim-tree.lua")
     -- bufferline
-    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+    use("akinsho/bufferline.nvim")
     use("kazhala/close-buffers.nvim")
     -- lualine
-    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+    use("nvim-lualine/lualine.nvim")
     -- show progress for lualine
     use("arkav/lualine-lsp-progress")
     use("windwp/nvim-autopairs")
@@ -46,7 +49,7 @@ packer.startup(function(use)
     -- }
 
     -- NOTE: telescope search enhance and ui for select
-    use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+    use("nvim-telescope/telescope.nvim")
     -- telescope extensions
     use("LinArcX/telescope-env.nvim")
     use("nvim-telescope/telescope-ui-select.nvim")
@@ -73,7 +76,7 @@ packer.startup(function(use)
     use("onsails/lspkind-nvim")
     -- format
     -- use("mhartington/formatter.nvim")
-    use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+    use("jose-elias-alvarez/null-ls.nvim")
 
     -- NOTE: cmp
     use("hrsh7th/nvim-cmp")
@@ -116,4 +119,6 @@ packer.startup(function(use)
     use("preservim/vim-markdown")
     use("mzlogin/vim-markdown-toc")
 
+    -- NOTE: cmake
+    use("Shatur/neovim-cmake")
 end)

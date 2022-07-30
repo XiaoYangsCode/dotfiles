@@ -15,6 +15,7 @@ null_ls.setup({
   debug = false,
   sources = {
     formatting.autopep8, -- for python
+    formatting.cmakelang, -- for cmake
     -- formatting.stylua, -- for lua
     -- formatting.clang_format, -- for cpp
     formatting.prettier.with({

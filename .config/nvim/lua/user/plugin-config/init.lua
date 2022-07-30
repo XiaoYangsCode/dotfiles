@@ -9,6 +9,7 @@ M.setup = function()
     local unload_plugins = {
         "init", -- we don't need to load init again
         "tabout",
+        -- "neovim-cmake",
     }
     local helper_set = {}
     for _, v in pairs(unload_plugins) do
@@ -21,8 +22,8 @@ M.setup = function()
                 local file = "user.plugin-config." .. cut_suffix_fname
                 local status_ok, _ = pcall(require, file)
                 if not status_ok then
-                    -- vim.notify('Failed loading ' .. fname, vim.log.levels.ERROR)
-                    print("load failed: " .. file)
+                    vim.notify('Failed loading ' .. fname, vim.log.levels.ERROR)
+                    -- print("load failed: " .. file)
                 end
             end
         end
