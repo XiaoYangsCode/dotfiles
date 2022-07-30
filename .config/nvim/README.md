@@ -38,6 +38,8 @@ pip3 install debugpy cmakelang
 
 # TODO
 
+- tmux
+- remove chinese
 - which key
 - snippets
 

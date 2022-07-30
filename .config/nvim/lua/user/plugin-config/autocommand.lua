@@ -14,7 +14,10 @@ vim.cmd [[
     autocmd FileType c,cpp,python,lua :lua require('user.dap.dap-util').load_breakpoints()
   augroup end
 
+  augroup _fold_bug_solution  " https://github.com/nvim-telescope/telescope.nvim/issues/559
+    autocmd!
+    autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
+  augroup end
 ]]
 
 -- autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-
