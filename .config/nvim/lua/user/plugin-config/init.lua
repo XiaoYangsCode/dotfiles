@@ -9,7 +9,7 @@ M.setup = function()
     local unload_plugins = {
         "init", -- we don't need to load init again
         "tabout",
-        -- "neovim-cmake",
+        "tmux",
     }
     local helper_set = {}
     for _, v in pairs(unload_plugins) do

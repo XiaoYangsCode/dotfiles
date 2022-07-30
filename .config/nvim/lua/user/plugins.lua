@@ -124,4 +124,8 @@ packer.startup(function(use)
 
     -- NOTE: which
     use("folke/which-key.nvim")
+
+    -- NOTE: tmux
+    -- use("aserowy/tmux.nvim")
+
 end)

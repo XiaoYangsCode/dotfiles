@@ -38,11 +38,11 @@ pip3 install debugpy cmakelang
 
 # TODO
 
-- tumx
 - unit test
 - call tree
 - workspace
 - snippets
+- ~~tumx~~
 
 # Short Key
 
