@@ -209,12 +209,16 @@ pip3 install debugpy cmakelang
 
 | function                     | short key |
 | ---------------------------- | --------- |
+| move to previous head        | `[[`      |
+| move to next head            | `]]`      |
+
+## Code folder
+
+| function                     | short key |
+| ---------------------------- | --------- |
 | close one folder             | `zc`      |
 | close one folder recursively | `zC`      |
 | open one folder              | `za`      |
 | open one folder recursively  | `zA`      |
 | close all folders            | `zM`      |
 | open all folders             | `zR`      |
-|                              |           |
-| move to previous head        | `[[`      |
-| move to next head            | `]]`      |
