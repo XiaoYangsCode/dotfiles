@@ -156,7 +156,8 @@ pluginKeys.cmp = function(cmp)
         -- next
         ["<A-j>"] = cmp.mapping.select_next_item(),
         -- confirm
-        ["<CR>"] = cmp.mapping.confirm({
+        -- ["<CR>"] = cmp.mapping.confirm({
+        ["<Tab>"] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,
         }),

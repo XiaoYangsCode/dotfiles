@@ -39,6 +39,9 @@ pip3 install debugpy cmakelang
 # TODO
 
 - which key
+- unit test
+- call tree
+- workspace
 - snippets
 
 # Short Key
