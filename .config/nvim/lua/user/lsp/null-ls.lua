@@ -15,7 +15,6 @@ null_ls.setup({
     debug = false,
     sources = {
         formatting.autopep8, -- for python
-        formatting.cmakelang, -- for cmake
         formatting.prettier.with({
             filetypes = {
                 "javascript",
@@ -34,6 +33,7 @@ null_ls.setup({
             },
             prefer_local = "node_modules/.bin",
         }),
+        formatting.cmakelang, -- for cmake, put to end pos, have conflicts with md
         diagnostics.flake8,
         completion.spell,
     },

@@ -56,7 +56,7 @@ map("n", "W", "5w", opt)
 map("n", "B", "5b", opt)
 map("", "H", "0", opt)
 map("", "L", "$", opt)
--- ctrl u / ctrl + d 
+-- ctrl u / ctrl + d
 -- map("n", "<C-u>", "9k", opt)
 -- map("n", "<C-d>", "9j", opt)
 
@@ -282,6 +282,57 @@ pluginKeys.dapuiKeymap = {
     edit = "e",
     repl = "r",
     toggle = "t",
+}
+
+-- NOTE: which-key
+pluginKeys.whichkeyKeymap = {
+    -- ["f"] = {
+    --     "<cmd>lua require('telescope.builtin').find_files()<cr>",
+    -- },
+    c = {
+        name = "CMake",
+        g = { "<cmd>CMake configure<CR>", "Configure" },
+        t = { "<cmd>CMake select_target<CR>", "SelectTarget" },
+        T = { "<cmd>CMake select_build_type<CR>", "SelectBuildType" },
+        b = { "<cmd>CMake build<CR>", "BuildTarget" },
+        a = { "<cmd>CMake build_all<CR>", "BuildAll" },
+        r = { "<cmd>CMake build_and_run<CR>", "Run" },
+        d = { "<cmd>CMake build_and_debug<CR>", "DebugTarget" },
+        c = { "<cmd>CMake cancel<CR>", "Cancel" },
+        s = { "<cmd>CMake set_target_args<CR>", "SetArg" },
+    },
+    g = {
+        name = "Git",
+        -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+        -- f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
+        -- p = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
+        n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+        N = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Hunk" },
+        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+        U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        d = {
+            "<cmd>Gitsigns diffthis HEAD<cr>",
+            "Diff",
+        },
+    },
+    h = {
+        name = "Help",
+        -- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+        -- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        C = { "<cmd>Telescope commands<cr>", "Commands" },
+    },
 }
 
 return pluginKeys

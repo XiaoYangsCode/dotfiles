@@ -38,13 +38,19 @@ pip3 install debugpy cmakelang
 
 # TODO
 
-- which key
+- tumx
 - unit test
 - call tree
 - workspace
 - snippets
 
 # Short Key
+
+## Which key
+
+| function       | short key          |
+| -------------- | ------------------ |
+| open which key | `<leader><leader>` |
 
 ## Basic
 
@@ -210,10 +216,10 @@ pip3 install debugpy cmakelang
 
 ## Markdown
 
-| function                     | short key |
-| ---------------------------- | --------- |
-| move to previous head        | `[[`      |
-| move to next head            | `]]`      |
+| function              | short key |
+| --------------------- | --------- |
+| move to previous head | `[[`      |
+| move to next head     | `]]`      |
 
 ## Code folder
 

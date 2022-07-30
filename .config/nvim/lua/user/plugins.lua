@@ -121,4 +121,7 @@ packer.startup(function(use)
 
     -- NOTE: cmake
     use("Shatur/neovim-cmake")
+
+    -- NOTE: which
+    use("folke/which-key.nvim")
 end)
