@@ -1,29 +1,29 @@
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
-  return
+    return
 end
 
 toggleterm.setup({
-  size = 20,
-  -- open_mapping = [[<c-\>]],
-  hide_numbers = false,
-  shade_filetypes = {},
-  shade_terminals = true,
-  shading_factor = 3,
-  start_in_insert = true,
-  insert_mappings = true,
-  persist_size = true,
-  direction = "float",
-  close_on_exit = true,
-  shell = vim.o.shell,
-  float_opts = {
-    border = "curved",
-    winblend = 3,
-    highlights = {
-      border = "Normal",
-      background = "Normal",
+    size = 20,
+    -- open_mapping = [[<c-\>]],
+    hide_numbers = false,
+    shade_filetypes = {},
+    shade_terminals = true,
+    shading_factor = 3,
+    start_in_insert = true,
+    insert_mappings = true,
+    persist_size = true,
+    direction = "float",
+    close_on_exit = true,
+    shell = vim.o.shell,
+    float_opts = {
+        border = "curved",
+        winblend = 3,
+        highlights = {
+            border = "Normal",
+            background = "Normal",
+        },
     },
-  },
 })
 
 -- function _G.set_terminal_keymaps()
@@ -44,7 +44,7 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
 -- NOTE: need to install lazygit first
 function _LAZYGIT_TOGGLE()
-  lazygit:toggle()
+    lazygit:toggle()
 end
 
 -- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})

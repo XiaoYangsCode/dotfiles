@@ -256,23 +256,9 @@ pluginKeys.outlineKeymap = {
 
 -- NOTE: nvim-dap
 pluginKeys.mapDAP = function()
-    -- 开始
-    -- map("n", "<leader>dd", ":RustDebuggables<CR>", opt)
-    -- 结束 (dapui无法自动关闭可能是bug，手动关闭能想到的一切)
-    -- map(
-    --   "n",
-    --   "<leader>de",
-    --   ":lua require'dap'.close()<CR>"
-    --   .. ":lua require'dap'.terminate()<CR>"
-    --   .. ":lua require'dap.repl'.close()<CR>"
-    --   .. ":lua require'dapui'.close()<CR>"
-    --   .. ":lua require('dap').clear_breakpoints()<CR>"
-    --   .. "<C-w>o<CR>",
-    --   opt
-    -- )
-    -- 继续
+    -- continue
     map("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opt)
-    -- 设置断点
+    -- toggle breakpoint
     map("n", "<leader>dt",
         "<cmd>lua require'dap'.toggle_breakpoint(); require'user.dap.dap-util'.store_breakpoints(true)<cr>", opt)
     -- map("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()", opt)
@@ -284,16 +270,19 @@ pluginKeys.mapDAP = function()
     map("n", "<leader>dj", ":lua require'dap'.step_over()<CR>", opt)
     map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", opt)
     map("n", "<leader>dl", ":lua require'dap'.step_into()<CR>", opt)
-    -- 弹窗
+    -- float wnd for variable
     map("n", "<leader>dh", ":lua require'dapui'.eval()<CR>", opt)
 
-    -- keymap("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
-    -- keymap('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
-    -- keymap("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
-    -- keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
-    -- keymap("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
-    -- keymap("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
-    -- keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 end
+
+pluginKeys.dapuiKeymap = {
+    -- Use a table to apply multiple mappings
+    expand = { "<CR>", "<2-LeftMouse>" },
+    open = "o",
+    remove = "d",
+    edit = "e",
+    repl = "r",
+    toggle = "t",
+}
 
 return pluginKeys
