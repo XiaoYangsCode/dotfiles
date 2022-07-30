@@ -22,24 +22,24 @@ db.custom_center = {
         action = "Telescope oldfiles",
     },
     {
+        icon = "  ",
+        desc = "Edit Projects                       ",
+        action = "edit ~/.local/share/nvim/project_nvim/project_history",
+    },
+    {
         icon = "  ",
         desc = "Edit keybindings                    ",
         action = "edit ~/dotfiles/.config/nvim/lua/user/keybindings.lua",
     },
     {
         icon = "  ",
-        desc = "Edit Projects                       ",
-        action = "edit ~/.local/share/nvim/project_nvim/project_history",
-    },
-    {
-      icon = "  ",
-      desc = "Find file                           ",
-      action = "Telescope find_files",
+        desc = "Edit .zshrc                         ",
+        action = "edit ~/.zshrc",
     },
     -- {
-    --   icon = "  ",
-    --   desc = "Edit .zshrc                        ",
-    --   action = "edit ~/.zshrc",
+    --     icon = "  ",
+    --     desc = "Find file                           ",
+    --     action = "Telescope find_files",
     -- },
     -- {
     --   icon = "  ",
