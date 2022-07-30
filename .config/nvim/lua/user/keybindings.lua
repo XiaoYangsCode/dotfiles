@@ -238,6 +238,8 @@ pluginKeys.telescopeList = {
         -- scorll preview wnd
         ["<C-u>"] = "preview_scrolling_up",
         ["<C-d>"] = "preview_scrolling_down",
+        -- which_key
+        -- ["<C-h>"] = "which_key",
     },
 }
 
@@ -303,17 +305,8 @@ pluginKeys.whichkeyKeymap = {
     },
     g = {
         name = "Git",
-        -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-        -- f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
-        -- p = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
-        n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-        N = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Hunk" },
-        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+       l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+       u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
         U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
         o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -323,9 +316,19 @@ pluginKeys.whichkeyKeymap = {
             "Diff",
         },
     },
+    l = {
+        name = "LSP",
+        d = {
+            "<cmd>Telescope diagnostics<cr>",
+            "Diagnostics",
+        },
+       -- f = { "<cmd>Format<cr>", "Format" },
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+    },
     h = {
         name = "Help",
-        -- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         -- r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
