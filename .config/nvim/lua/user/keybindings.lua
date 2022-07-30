@@ -1,6 +1,5 @@
 local map = vim.api.nvim_set_keymap
 local bufmap = vim.api.nvim_buf_set_keymap
--- 复用 opt 参数
 local opt = { noremap = true, silent = true }
 
 map("n", " ", "", opt)
@@ -9,39 +8,39 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- NOTE: quick wnd
--- 取消 s 默认功能
+-- diable s
 map("n", "s", "", opt)
--- windows 分屏快捷键
+-- windows split
 map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
--- 关闭当前
+-- close cur
 map("n", "sc", "<C-w>c", opt)
--- 关闭其他
+-- close other
 map("n", "so", "<C-w>o", opt)
--- Ctrl + hjkl  窗口之间跳转
+-- Ctrl + hjkl window jump
 map("n", "<C-h>", "<C-w>h", opt)
 map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 
--- 左右比例控制
+-- left right ratio
 map("n", "<C-Left>", ":vertical resize +2<CR>", opt)
 map("n", "<C-Right>", ":vertical resize -2<CR>", opt)
 map("n", "s,", ":vertical resize +20<CR>", opt)
 map("n", "s.", ":vertical resize -20<CR>", opt)
--- 上下比例
+-- up down ratio
 map("n", "sj", ":resize -10<CR>", opt)
 map("n", "sk", ":resize +10<CR>", opt)
 map("n", "<C-Down>", ":resize -2<CR>", opt)
 map("n", "<C-Up>", ":resize +2<CR>", opt)
--- 等比例
+-- equal ratio
 map("n", "s=", "<C-w>=", opt)
 
 -- NOTE: enditor enhance
--- visual模式下缩进代码
+-- visual code indent
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
--- 上下移动选中文本
+-- move choosed text
 map("v", "<A-j>", ":move '>+1<CR>gv-gv", opt)
 map("v", "<A-k>", ":move '<-2<CR>gv-gv", opt)
 -- insert
@@ -49,15 +48,15 @@ map("i", "jj", "<Esc>", opt)
 -- copy to system clip  need xclip
 map("v", "Y", '"+y', opt)
 
--- 上下滚动浏览
+-- quick move
 map("", "J", "5j", opt)
 map("", "K", "5k", opt)
--- 行内快速移动
+-- quick move inline
 map("n", "W", "5w", opt)
 map("n", "B", "5b", opt)
 map("", "H", "0", opt)
 map("", "L", "$", opt)
--- ctrl u / ctrl + d  只移动9行，默认移动半屏
+-- ctrl u / ctrl + d 
 -- map("n", "<C-u>", "9k", opt)
 -- map("n", "<C-d>", "9j", opt)
 
@@ -145,23 +144,23 @@ local pluginKeys = {}
 -- NOTE: cmp
 pluginKeys.cmp = function(cmp)
     return {
-        -- 出现补全
+        -- show cmp
         ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        -- 取消
+        -- disable
         ["<A-,>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        -- 上一个
+        -- pre
         ["<A-k>"] = cmp.mapping.select_prev_item(),
-        -- 下一个
+        -- next
         ["<A-j>"] = cmp.mapping.select_next_item(),
-        -- 确认
+        -- confirm
         ["<CR>"] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,
         }),
-        -- 如果窗口内容太多，可以滚动
+        -- scorll
         ["<A-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<A-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     }
@@ -189,19 +188,18 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 
 -- NOTE: nvim-tree
--- 打开关闭tree
+-- open tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
--- 列表快捷键
 pluginKeys.nvimTreeList = {
-    -- 打开文件或文件夹
+    -- open
     { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
-    -- 分屏打开文件
+    -- open split
     { key = "v", action = "vsplit" },
     { key = "h", action = "split" },
-    -- 显示隐藏文件
+    -- show hide files
     { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
     { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
-    -- 文件操作
+    -- file operation
     { key = "<F5>", action = "refresh" },
     { key = "a", action = "create" },
     { key = "d", action = "remove" },
@@ -213,9 +211,9 @@ pluginKeys.nvimTreeList = {
 }
 
 -- NOTE: Telescope
--- 查找文件
+-- find files
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
--- 全局搜索
+-- gloabal search
 map("n", "<C-f>", ":Telescope live_grep_args<CR>", opt)
 -- map("n", "<C-d>", ":lua require'user.utils'.search_config_files()<CR>", opt)
 map("n", "<C-d>", ":Telescope live_grep<CR>", opt)
@@ -226,17 +224,17 @@ map("n", "<leader>p", ":Telescope projects<CR>", opt)
 -- insert mode short key for telescope
 pluginKeys.telescopeList = {
     i = {
-        -- 上下移动
+        -- movement
         ["<A-j>"] = "move_selection_next",
         ["<A-k>"] = "move_selection_previous",
         ["<Down>"] = "move_selection_next",
         ["<Up>"] = "move_selection_previous",
-        -- 历史记录
+        -- history
         ["<C-n>"] = "cycle_history_next",
         ["<C-p>"] = "cycle_history_prev",
-        -- 关闭窗口
+        -- close
         ["<C-c>"] = "close",
-        -- 预览窗口上下滚动
+        -- scorll preview wnd
         ["<C-u>"] = "preview_scrolling_up",
         ["<C-d>"] = "preview_scrolling_down",
     },

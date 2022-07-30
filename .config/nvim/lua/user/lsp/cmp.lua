@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 
 local cmp_config = {
-    -- 指定 snippet 引擎
+    -- snippet engine
     snippet = {
         expand = function(args)
             -- For `vsnip` users.
@@ -21,7 +21,7 @@ local cmp_config = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
-    -- 补全源
+    -- cmp sources
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         -- For vsnip users.
@@ -37,12 +37,12 @@ local cmp_config = {
         -- { name = 'snippy' },
     }, { { name = "buffer" }, { name = "path" } }),
 
-    -- 快捷键设置
+    -- keymap
     mapping = require("user.keybindings").cmp(cmp),
     formatting = require("user.lsp.ui").formatting
 }
 
--- / 查找模式使用 buffer 源
+-- use buffer sources when find mode
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -50,7 +50,7 @@ cmp.setup.cmdline("/", {
     },
 })
 
--- : 命令行模式中使用 path 和 cmdline 源.
+-- use path and cmdline source when command mode
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({

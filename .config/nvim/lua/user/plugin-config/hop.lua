@@ -1,6 +1,6 @@
 local status, hop = pcall(require, "hop")
 if not status then
-    vim.notify("can not find hop")
+    vim.notify("hop not found!")
     return
 end
 

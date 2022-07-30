@@ -1,6 +1,6 @@
 local status, db = pcall(require, "dashboard")
 if not status then
-    vim.notify("没有找到 dashboard")
+    vim.notify("dashboard not found!")
     return
 end
 
@@ -31,10 +31,15 @@ db.custom_center = {
         desc = "Edit Projects                       ",
         action = "edit ~/.local/share/nvim/project_nvim/project_history",
     },
+    {
+      icon = "  ",
+      desc = "Find file                           ",
+      action = "Telescope find_files",
+    },
     -- {
     --   icon = "  ",
-    --   desc = "Edit .bashrc                        ",
-    --   action = "edit ~/.bashrc",
+    --   desc = "Edit .zshrc                        ",
+    --   action = "edit ~/.zshrc",
     -- },
     -- {
     --   icon = "  ",
@@ -45,11 +50,6 @@ db.custom_center = {
     --   icon = "  ",
     --   desc = "Edit init.lua                       ",
     --   action = "edit ~/.config/nvim/init.lua",
-    -- },
-    -- {
-    --   icon = "  ",
-    --   desc = "Find file                           ",
-    --   action = "Telescope find_files",
     -- },
     -- {
     --   icon = "  ",
