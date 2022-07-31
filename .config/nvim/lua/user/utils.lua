@@ -211,6 +211,12 @@ M.find_git_ancestor = function(startpath)
 end
 
 
+
+-- vim.log.levels.DEBUG
+-- vim.log.levels.ERROR
+-- vim.log.levels.INFO
+-- vim.log.levels.TRACE
+-- vim.log.levels.WARN
 M.run_test = function()
     local table = vim.fn.readdir("/home/lt/.config/nvim/lua/user/plugin-config")
     print(#table)
@@ -237,7 +243,7 @@ M.run_files = function()
         local buf_name = vim.api.nvim_buf_get_name(0)
         os.execute("python3 /" .. buf_name)
     else
-        vim.notify("Try to run unknown filetype!!")
+        vim.notify("Try to run unknown filetype!!", vim.log.levels.WARN)
     end
 end
 -- elseif vim.api.nvim_buf_get_option(0, "filetype") == "shell" then
@@ -248,25 +254,25 @@ end
 
 M.run_qt_designer = function()
     os.execute('pyside6-designer')
-    print("open qtdesigner success")
+    vim.notify("open qtdesigner success")
 end
 
 M.run_qt_designer_args = function()
     local total_buf_name = vim.api.nvim_buf_get_name(0)
     local suffix = total_buf_name:sub(-3)
     if (suffix ~= ".ui") then
-        print("suffix is not ui for qt")
+        vim.notify("suffix is not ui for qt", vim.log.levels.WARN)
         return
     end
     os.execute('pyside6-designer /' .. total_buf_name)
-    print("open qtdesigner success, path : " .. total_buf_name)
+    vim.notify("open qtdesigner success, path : " .. total_buf_name)
 end
 
 M.run_pyuic = function()
     local total_buf_name = vim.api.nvim_buf_get_name(0)
     local suffix = total_buf_name:sub(-3)
     if (suffix ~= ".ui") then
-        print("suffix is not ui for qt")
+        vim.notify("suffix is not ui for qt", vim.log.levels.WARN)
         return
     end
     local table = vim.fn.split(total_buf_name, "/")
@@ -274,7 +280,7 @@ M.run_pyuic = function()
     local py_name = "ui_" .. ui_name:gsub(".ui", ".py")
     local total_py_name = total_buf_name:gsub(ui_name, py_name)
     os.execute("pyside6-uic /" .. total_buf_name .. " > /" .. total_py_name)
-    print("uic success, path : " .. total_py_name)
+    vim.notify("uic success, path : " .. total_py_name)
 end
 
 return M
