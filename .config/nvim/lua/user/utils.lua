@@ -230,13 +230,14 @@ M.run_test = function()
 end
 
 M.run_files = function()
-    if vim.api.nvim_buf_get_option(0, "filetype") == "markdown" then -- cutomize difference language comment marker
+    local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+    if filetype == "markdown" then -- customize difference language
         vim.api.nvim_command(":MarkdownPreviewToggle")
-    elseif vim.api.nvim_buf_get_option(0, "filetype") == "python" then
+    elseif filetype == "python" then
         local buf_name = vim.api.nvim_buf_get_name(0)
         os.execute("python3 /" .. buf_name)
     else
-        print("Try to run unknown filetype!!")
+        vim.notify("Try to run unknown filetype!!")
     end
 end
 -- elseif vim.api.nvim_buf_get_option(0, "filetype") == "shell" then
