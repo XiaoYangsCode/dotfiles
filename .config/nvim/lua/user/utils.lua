@@ -211,6 +211,11 @@ M.find_git_ancestor = function(startpath)
 end
 
 
+-- some config
+M.colorscheme = "tokyonight"
+-- M.colorscheme = "onedark"
+
+
 
 -- vim.log.levels.DEBUG
 -- vim.log.levels.ERROR

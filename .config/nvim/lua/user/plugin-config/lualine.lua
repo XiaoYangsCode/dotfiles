@@ -22,7 +22,7 @@ local file_name = {
 
 lualine.setup({
     options = {
-        theme = "onedark",
+        theme = require('user.utils').colorscheme,
         component_separators = { left = "|", right = "|" },
         -- https://github.com/ryanoasis/powerline-extra-symbols
         section_separators = { left = " ", right = "" },

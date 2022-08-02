@@ -5,6 +5,7 @@ packer.startup(function(use)
     --NOTE: ui
     -- onedark
     use("ful1e5/onedark.nvim")
+    use("folke/tokyonight.nvim")
     -- need install   yay -S code-minimap    command Minimap
     use("wfxr/minimap.vim")
     use("nvim-lua/plenary.nvim")
