@@ -18,6 +18,13 @@ pip3 install debugpy cmakelang
 
 # Installation
 
+Install packer manager first
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
 - `:PackerSync`
 - `:TSInstallInfo`
 - `:LspInstallInfo`
