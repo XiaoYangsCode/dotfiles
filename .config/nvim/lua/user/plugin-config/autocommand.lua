@@ -6,7 +6,7 @@ vim.cmd [[
 
   augroup minimap_refersh
     autocmd! * <buffer>
-    autocmd BufWritePre <buffer> :MinimapRefresh<CR>
+    autocmd BufWritePre <buffer> :MinimapRefresh
   augroup END
 
   augroup _load_break_points
