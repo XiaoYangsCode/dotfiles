@@ -1,14 +1,10 @@
 # Requirements
 
-- alacritty
-- xclip
 - code-minimap
 - npm
 - rg (ripgrep)
 - fd (file finder)
-- lazygit
-- cmake
-- flake8
+- flake8 (source code checker)
 - prettier (formaters)
 - autopep8 (format for python)
 - cmakelang (format for cmake)
@@ -16,8 +12,7 @@
 - lldb (adapter for cpp)
 
 ```bash
-sudo pacman -S alacritty xclip code-minimap ripgrep fd lazygit cmake flake8 prettier \
-autopep8 lldb
+sudo pacman -S code-minimap ripgrep fd lazygit flake8 prettier autopep8 lldb
 pip3 install debugpy cmakelang
 ```
 

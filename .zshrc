@@ -113,6 +113,7 @@ alias ra="ranger"
 alias notion='firefox --app=https://www.notion.so'
 alias n='neofetch'
 alias c='clear'
+alias wf='wayfire'
 
 
 export  WORKON_HOME=$HOME/.virtualenvs 
@@ -125,5 +126,6 @@ eval "$(pyenv init -)"
 
 workon ml
 # export LIBGL_ALWAYS_INDIRECT=0
-
+#
+# ranger not load default conf
 export RANGER_LOAD_DEFAULT_RC=FALSE
