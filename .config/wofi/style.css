@@ -1,5 +1,5 @@
 @define-color grey rgba(32, 32, 32, 0.8);
-@define-color yellow #00ccff;
+@define-color blue #00ccff;
 @define-color darkgrey rgba(20, 20, 20, 0.8);
 @define-color transparent rgba(0, 0, 0, 0);
 
@@ -15,8 +15,9 @@ window {
 
 #input {
   margin: 0px 30px 10px 30px;
-  border-bottom: 2px solid @yellow;
+  border-bottom: 2px solid @blue;
   border-radius: 0px;
+  color: white;
   background-color: @transparent;
 }
 
@@ -55,14 +56,14 @@ expander .entry {
 }
 
 #entry:selected{
-  background-color: @yellow;
+  background-color: @blue;
   color: @darkgrey;
   outline: 0px;
   border-radius: 0px;
 }
 
 #text:selected{
-  background-color: @yellow;
+  background-color: @blue;
   color: @darkgrey;
   outline: 0px;
   border-radius: 0px;
