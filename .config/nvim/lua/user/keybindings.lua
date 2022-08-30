@@ -254,6 +254,10 @@ pluginKeys.outlineKeymap = {
     rename_symbol = "r",
     code_actions = "a",
 }
+-- W : Fold all
+-- E : Unfold all
+-- h : Fold
+-- l : Unfold
 
 -- NOTE: nvim-dap
 pluginKeys.mapDAP = function()
