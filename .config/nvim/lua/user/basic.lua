@@ -12,7 +12,7 @@ vim.wo.cursorline = true
 -- show left sigh
 vim.wo.signcolumn = "yes"
 -- right refer line
-vim.wo.colorcolumn = "80"
+vim.wo.colorcolumn = "100"
 -- indent
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
